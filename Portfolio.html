@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jade Hendricks – Minimal Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    
+
+    /* Animations */
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
+    @keyframes pulseGlow { 0%,100% { box-shadow: 0 0 8px #6366f1; } 50% { box-shadow: 0 0 16px #6366f1; } }
+    /* Hero accent circle */
+    .hero { position: relative; animation: fadeInUp 1s ease-out; }
+    .hero::before { content: ''; position: absolute; top: -50px; left: 50%; width: 200px; height: 200px; background: radial-gradient(circle at center, rgba(99,102,241,0.3), transparent); border-radius: 50%; transform: translateX(-50%); z-index: -1; }
+    /* Card hover glow */
+    section.card { animation: fadeInUp 0.8s ease-out; }
+    section.card:hover { animation: pulseGlow 2s infinite; }
+
+    /* Grid for portfolio */
+    .portfolio-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem; }
+@media (min-width: 600px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 992px) { .portfolio-grid { grid-template-columns: repeat(4, 1fr); } }
+    @media (min-width: 768px) { .portfolio-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    body {
+  background: #111827 radial-gradient(circle, rgba(224,230,250,0.05) 1px, transparent 1px) 0 0 / 20px 20px;
+  color: #e0e6fa;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+    nav {
+      position: fixed; top: 0; left: 0; width: 100vw;
+      background: rgba(17,24,39,0.93);
+      display: flex; justify-content: center;
+      z-index: 10;
+      padding: 0.75rem 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.11);
+    }
+    nav ul { display: flex; gap: 2.5rem; margin: 0; padding: 0; list-style: none; }
+    nav a {
+      color: #a5b4fc;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      font-size: 1.08rem;
+      transition: color 0.17s;
+    }
+    nav a:hover { color: #fff; }
+    .hero {
+      margin-top: 6.5rem;
+      margin-bottom: 2.3rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #8f9aff;
+      margin: 0 0 0.3em 0;
+    }
+    .hero-sub {
+      color: #a5b4fc;
+      font-size: 1.18rem;
+      letter-spacing: 0.015em;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+      max-width: 700px;
+      margin: 0 auto;
+      padding-bottom: 3rem;
+    }
+    section.card {
+      background: #23263a;
+      border-radius: 1.3rem;
+      padding: 2.3rem 1.6rem;
+      width: 100%;
+      box-shadow: 0 2px 24px 0 rgba(30,0,80,0.12);
+      border: 1px solid #323a5b;
+    }
+    h2 { color: #7b90ff; font-weight: 700; font-size: 1.38rem; margin-top: 0; }
+    ul { padding-left: 1.2em; }
+    .button {
+      padding: 0.68em 2em;
+      background: linear-gradient(90deg, #6366f1 40%, #a78bfa 100%);
+      color: #fff;
+      border-radius: 0.7em;
+      border: none;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-right: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: filter 0.2s;
+      box-shadow: 0 2px 16px #272a45a0;
+      display: inline-block;
+      margin-bottom: 0.9em;
+    }
+    .button:last-child { margin-right: 0; }
+    footer {
+      color: #545f83;
+      font-size: 0.98rem;
+      margin-top: 2.5rem;
+      text-align: center;
+      padding: 2.2rem 0 1.5rem;
+    }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2.1rem; }
+      nav ul { gap: 1.4rem; font-size: 1rem; }
+      section.card { padding: 1.1rem; }
+      main { padding: 0 0.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#work">Portfolio</a></li>
+      <li><a href="#elevator">Elevator Pitch</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <h1>Jade Lorenzo Hendricks</h1>
+    <div class="hero-sub">Entrepreneur · Tech‑Powered Problem‑Solver · Faith‑Driven Mentor</div>
+  </div>
+
+  <main>
+    <section class="card" id="about">
+      <h2>About Me</h2>
+      <p>
+        I’m a Johannesburg-based entrepreneur building <strong>Kaizen Customz</strong> — South Africa’s go-to brand for premium tyre lettering kits. My days start before sunrise with prayer, fitness, and a disciplined review of market data; by mid-morning I’m automating workflows, crafting social content, or mentoring young professionals through ImpactX.
+      </p>
+      <p>
+        Alongside my core ventures I maintain disciplined forex sessions (London & New York) to sharpen analytical discipline and fund innovation. Faith, family, and continuous improvement are the backbone of everything I pursue.
+      </p>
+    </section>
+
+    <section class="card" id="work">
+  <style>
+    /* Portfolio links color override */
+    #work a { color: #e0e6fa; text-decoration: none; }
+    #work a:hover { color: #6366f1; }
+  </style>
+  <h2>Portfolio</h2>
+  <div class="portfolio-grid">
+    <!-- Website -->
+    <a href="#" class="block p-4 bg-[#1f2130] rounded-lg hover:bg-[#323448] transition">
+      <h3 class="text-lg font-semibold text-white mb-2">Kaizen Customz Website</h3>
+      <p class="text-sm text-gray-400">Custom-coded, fully responsive e-commerce site for custom tyre-lettering kits (launching July 2025).</p>
+    </a>
+    <!-- Bot -->
+    <a href="#" class="block p-4 bg-[#1f2130] rounded-lg hover:bg-[#323448] transition">
+      <h3 class="text-lg font-semibold text-white mb-2">Automated WhatsApp Bot</h3>
+      <p class="text-sm text-gray-400">WhatsApp & Telegram bot prototype automating quote → pay → booking in under 2 minutes.</p>
+    </a>
+    <!-- ImpactX -->
+    <a href="#" class="block p-4 bg-[#1f2130] rounded-lg hover:bg-[#323448] transition">
+      <h3 class="text-lg font-semibold text-white mb-2">ImpactX Platform</h3>
+      <p class="text-sm text-gray-400">Developing an AI-powered job-placement platform to connect South African youth to future-proof roles.</p>
+    </a>
+</div>
+</section>
+
+    <section class="card" id="elevator">
+      <h2>Elevator Pitch</h2>
+      <p>
+        “Hi—I’m Jade Hendricks. I blend entrepreneurial grit with tech automation and faith-driven mentorship. From scaling Kaizen Customz to enabling job-placement through ImpactX, my mission is simple: build systems that create opportunity. If you need a partner who turns complexity into growth—let’s connect.”
+      </p>
+      <a class="button" href="mailto:jadehendricks@email.com">Email Me</a>
+      <a class="button" href="https://calendly.com/your-link" target="_blank">Book a Call</a>
+    </section>
+  </main>
+
+  <div class="background-layer"></div>
+<footer>
+
+</body>
+</html>
